@@ -11,7 +11,8 @@ export default function Home() {
   const [messages, setMessages] = useState([
     {
       role: "system",
-      content: "You are a chatbot that is helpful and replies concisely",
+      content: "raggiona come asistente di Codigo Solution software house specialisata in creazione AI, ecommerce, aplicazioni web e mobile. saluta sempre a tutti dando il benvenuto a Codigo Solution porta al clienti sempre alla call to action di richiedere un preventivo ",
+
     },
   ]); // An array of the messages that make up the chat
   const [newMessageText, setNewMessageText] = useState("");
@@ -27,7 +28,8 @@ export default function Home() {
     setMessages([
       {
         role: "system",
-        content: "You are a chatbot that is helpful and replies concisely",
+        content: "raggiona come asistente di Codigo Solution software house specialisata in creazione AI, ecommerce, aplicazioni web e mobile. saluta sempre a tutti dando il benvenuto a Codigo Solution porta al clienti sempre alla call to action di richiedere un preventivo",
+
       },
     ]);
     setNewMessageText("");
@@ -122,10 +124,11 @@ export default function Home() {
   }, [newMessageText]);
 
   return (
-    <main className="mx-auto h-screen max-w-full sm:max-w-3xl">
+    
+    <main  className="mx-auto h-screen max-w-full sm:max-w-3xl">
       <div className="py-8">
         <h1 className="text-center text-6xl font-bold text-blue-500">
-         Codigo Solution BOT
+         CS BOT
         </h1>
       </div>
 
@@ -138,35 +141,7 @@ export default function Home() {
             <p className="mb-32">
               Inizia a chatare col nostro BOT
             </p>
-           {/*  <p className="mb-2">
-              Built by David Wu (
-              <a
-                className="text-blue-500"
-                target="_blank"
-                href="https://twitter.com/david_j_wu"
-              >
-                @david_j_wu
-              </a>
-              )
-            </p> */}
-          {/*   <p>
-              Read the tutorial to build this chatbot{" "}
-              <a
-                className="text-blue-500"
-                target="_blank"
-                href="https://davidwu.io/posts/building-a-chatbot-with-openais-chatgpt-api-nextjs-and-tailwind-css/"
-              >
-                here
-              </a>{" "}
-              on{" "}
-              <a
-                className="text-blue-500"
-                target="_blank"
-                href="https://davidwu.io/"
-              >
-                davidwu.io
-              </a>
-            </p> */}
+          
           </div>
         </div>
       )}
@@ -175,7 +150,7 @@ export default function Home() {
         {messages.slice(1).map((message, index) => (
           <div className="mx-2 my-4" key={index.toString()}>
             <p className="font-bold">
-              {message.role === "assistant" ? "Codigo Chatbot" : "Tu"}
+              {message.role === "assistant" ? "CS bot" : "Tu"}
             </p>
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {message.content}
@@ -186,7 +161,7 @@ export default function Home() {
 
       {loadingStatus && (
         <div className="mx-2 mt-4">
-          <p className="font-bold">GPT Chatbot sta elaborando...</p>
+          <p className="font-bold">Sto elaborando...</p>
         </div>
       )}
 
@@ -198,7 +173,14 @@ export default function Home() {
                          hover:bg-gray-600"
             onClick={onClick}
           >
-            <p className="font-bold text-white">Nuova chat</p>
+          
+            <div className="font-bold text-white">
+			<a className="elementor-button elementor-button-link elementor-size-sm" href="https://codigosolution.com/preventivo-sito-web/">
+						<span className="elementor-button-content-wrapper">
+						<span className="elementor-button-text">Preventivo</span>
+		</span>
+					</a>
+		</div>
           </button>
         </div>
       )}
@@ -223,7 +205,7 @@ export default function Home() {
             value={newMessageText}
             onChange={onChange}
             onKeyDown={onKeyDown}
-            placeholder="perche creare un ecommerce ?"
+            placeholder="come creare un ecommerce ?"
           />
 
           {loadingStatus ? (
@@ -232,7 +214,7 @@ export default function Home() {
                          bg-blue-400 px-1 py-1"
               disabled
             >
-              <p className="font-bold text-white">Send</p>
+              <p className="font-bold text-white">Invia!</p>
             </button>
           ) : (
             <button
@@ -241,7 +223,7 @@ export default function Home() {
                          hover:bg-blue-700"
               type="submit"
             >
-              <p className="font-bold text-white">Invia</p>
+              <p className="font-bold text-white">Invia!</p>
             </button>
           )}
         </form>
